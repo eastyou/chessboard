@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国际象棋课堂讲义</title>
+<style>
+@page { size: A4; margin: 0 }
+* { box-sizing: border-box }
+html, body { margin: 0; padding: 0 }
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: #222;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page { width: 210mm; min-height: 297mm; padding: 12mm; box-sizing: border-box; overflow: hidden; page-break-after: always }
+.page:last-child { page-break-after: auto }
+h1 { font-size: 7mm; text-align: center; margin: 0 0 6mm }
+h2 { font-size: 5mm; margin: 0 0 4mm }
+.board-table { border-collapse: collapse; margin: 0 auto; table-layout: fixed }
+.board-table td.sq { width: 19mm; height: 19mm; text-align: center; vertical-align: middle; font-size: 12mm; line-height: 19mm }
+.board-table td.light { background: #f0d9b5 }
+.board-table td.dark { background: #b58863 }
+.board-table td.coord { width: 7mm; height: 19mm; text-align: center; vertical-align: middle; font-size: 3.5mm; color: #555 }
+.board-table tr.coord-row td.coord { width: 19mm; height: 7mm }
+.piece { color: #111 }
+.legend { margin-top: 6mm; font-size: 3.6mm; line-height: 1.6 }
+.legend p { margin: 1mm 0 }
+.swatch { display: inline-block; width: 4mm; height: 4mm; border: 0.2mm solid #888; vertical-align: middle }
+.swatch.light { background: #f0d9b5 }
+.swatch.dark { background: #b58863 }
+.disc-grid { text-align: center }
+.piece-disc { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 22mm; height: 22mm; border: 0.3mm dashed #999; border-radius: 50%; margin: 1.5mm; vertical-align: top }
+.piece-disc .glyph { font-size: 10mm; line-height: 1 }
+.piece-disc .name { font-size: 3mm; line-height: 1.2; margin-top: 0.5mm; color: #333 }
+.piece-disc.white .glyph { color: #fff; text-shadow: 0 0 0.35mm #333, 0 0 0.35mm #333 }
+.piece-disc.black .glyph { color: #111 }
+.practice li { margin: 2mm 0; font-size: 4mm }
+.answer-page ol { font-size: 3.8mm; line-height: 1.9 }
+.hint { font-size: 3.4mm; color: #666; margin-top: 6mm }
+</style>
+</head>
+<body>
+<section class="page board-page">
+<h1>国际象棋课堂讲义</h1>
+<table class="board-table"><tr class="coord-row"><td class="coord"></td><td class="coord">a</td><td class="coord">b</td><td class="coord">c</td><td class="coord">d</td><td class="coord">e</td><td class="coord">f</td><td class="coord">g</td><td class="coord">h</td><td class="coord"></td></tr><tr><td class="coord">8</td><td class="sq light" data-square="a8"><span class="piece">♜</span></td><td class="sq dark" data-square="b8"><span class="piece">♞</span></td><td class="sq light" data-square="c8"><span class="piece">♝</span></td><td class="sq dark" data-square="d8"><span class="piece">♛</span></td><td class="sq light" data-square="e8"><span class="piece">♚</span></td><td class="sq dark" data-square="f8"><span class="piece">♝</span></td><td class="sq light" data-square="g8"><span class="piece">♞</span></td><td class="sq dark" data-square="h8"><span class="piece">♜</span></td><td class="coord">8</td></tr><tr><td class="coord">7</td><td class="sq dark" data-square="a7"><span class="piece">♟</span></td><td class="sq light" data-square="b7"><span class="piece">♟</span></td><td class="sq dark" data-square="c7"><span class="piece">♟</span></td><td class="sq light" data-square="d7"><span class="piece">♟</span></td><td class="sq dark" data-square="e7"><span class="piece">♟</span></td><td class="sq light" data-square="f7"><span class="piece">♟</span></td><td class="sq dark" data-square="g7"><span class="piece">♟</span></td><td class="sq light" data-square="h7"><span class="piece">♟</span></td><td class="coord">7</td></tr><tr><td class="coord">6</td><td class="sq light" data-square="a6"></td><td class="sq dark" data-square="b6"></td><td class="sq light" data-square="c6"></td><td class="sq dark" data-square="d6"></td><td class="sq light" data-square="e6"></td><td class="sq dark" data-square="f6"></td><td class="sq light" data-square="g6"></td><td class="sq dark" data-square="h6"></td><td class="coord">6</td></tr><tr><td class="coord">5</td><td class="sq dark" data-square="a5"></td><td class="sq light" data-square="b5"></td><td class="sq dark" data-square="c5"></td><td class="sq light" data-square="d5"></td><td class="sq dark" data-square="e5"></td><td class="sq light" data-square="f5"></td><td class="sq dark" data-square="g5"></td><td class="sq light" data-square="h5"></td><td class="coord">5</td></tr><tr><td class="coord">4</td><td class="sq light" data-square="a4"></td><td class="sq dark" data-square="b4"></td><td class="sq light" data-square="c4"></td><td class="sq dark" data-square="d4"></td><td class="sq light" data-square="e4"></td><td class="sq dark" data-square="f4"></td><td class="sq light" data-square="g4"></td><td class="sq dark" data-square="h4"></td><td class="coord">4</td></tr><tr><td class="coord">3</td><td class="sq dark" data-square="a3"></td><td class="sq light" data-square="b3"></td><td class="sq dark" data-square="c3"></td><td class="sq light" data-square="d3"></td><td class="sq dark" data-square="e3"></td><td class="sq light" data-square="f3"></td><td class="sq dark" data-square="g3"></td><td class="sq light" data-square="h3"></td><td class="coord">3</td></tr><tr><td class="coord">2</td><td class="sq light" data-square="a2"><span class="piece">♙</span></td><td class="sq dark" data-square="b2"><span class="piece">♙</span></td><td class="sq light" data-square="c2"><span class="piece">♙</span></td><td class="sq dark" data-square="d2"><span class="piece">♙</span></td><td class="sq light" data-square="e2"><span class="piece">♙</span></td><td class="sq dark" data-square="f2"><span class="piece">♙</span></td><td class="sq light" data-square="g2"><span class="piece">♙</span></td><td class="sq dark" data-square="h2"><span class="piece">♙</span></td><td class="coord">2</td></tr><tr><td class="coord">1</td><td class="sq dark" data-square="a1"><span class="piece">♖</span></td><td class="sq light" data-square="b1"><span class="piece">♘</span></td><td class="sq dark" data-square="c1"><span class="piece">♗</span></td><td class="sq light" data-square="d1"><span class="piece">♕</span></td><td class="sq dark" data-square="e1"><span class="piece">♔</span></td><td class="sq light" data-square="f1"><span class="piece">♗</span></td><td class="sq dark" data-square="g1"><span class="piece">♘</span></td><td class="sq light" data-square="h1"><span class="piece">♖</span></td><td class="coord">1</td></tr><tr class="coord-row"><td class="coord"></td><td class="coord">a</td><td class="coord">b</td><td class="coord">c</td><td class="coord">d</td><td class="coord">e</td><td class="coord">f</td><td class="coord">g</td><td class="coord">h</td><td class="coord"></td></tr></table>
+<div class="legend"><p><strong>图例：</strong><span class="swatch light"></span> 浅色格 <span class="swatch dark"></span> 深色格 ｜ 白方 ♔ ♕ ♖ ♗ ♘ ♙ ｜ 黑方 ♚ ♛ ♜ ♝ ♞ ♟</p><p><strong>局面：</strong>白方行棋，共 32 枚棋子　行棋方：白方　王车易位：KQkq　吃过路兵：-　回合：1</p></div>
+</section>
+<section class="page pieces-page">
+<h1>国际象棋课堂讲义 · 棋子裁剪片</h1>
+<p class="hint">沿虚线剪下圆片，可配合棋盘页使用；每种棋子各 4 枚（白 2、黑 2）。</p>
+<div class="disc-grid"><div class="piece-disc white"><span class="glyph">♔</span><span class="name">白王</span></div><div class="piece-disc white"><span class="glyph">♔</span><span class="name">白王</span></div><div class="piece-disc black"><span class="glyph">♚</span><span class="name">黑王</span></div><div class="piece-disc black"><span class="glyph">♚</span><span class="name">黑王</span></div><div class="piece-disc white"><span class="glyph">♕</span><span class="name">白后</span></div><div class="piece-disc white"><span class="glyph">♕</span><span class="name">白后</span></div><div class="piece-disc black"><span class="glyph">♛</span><span class="name">黑后</span></div><div class="piece-disc black"><span class="glyph">♛</span><span class="name">黑后</span></div><div class="piece-disc white"><span class="glyph">♖</span><span class="name">白车</span></div><div class="piece-disc white"><span class="glyph">♖</span><span class="name">白车</span></div><div class="piece-disc black"><span class="glyph">♜</span><span class="name">黑车</span></div><div class="piece-disc black"><span class="glyph">♜</span><span class="name">黑车</span></div><div class="piece-disc white"><span class="glyph">♗</span><span class="name">白象</span></div><div class="piece-disc white"><span class="glyph">♗</span><span class="name">白象</span></div><div class="piece-disc black"><span class="glyph">♝</span><span class="name">黑象</span></div><div class="piece-disc black"><span class="glyph">♝</span><span class="name">黑象</span></div><div class="piece-disc white"><span class="glyph">♘</span><span class="name">白马</span></div><div class="piece-disc white"><span class="glyph">♘</span><span class="name">白马</span></div><div class="piece-disc black"><span class="glyph">♞</span><span class="name">黑马</span></div><div class="piece-disc black"><span class="glyph">♞</span><span class="name">黑马</span></div><div class="piece-disc white"><span class="glyph">♙</span><span class="name">白兵</span></div><div class="piece-disc white"><span class="glyph">♙</span><span class="name">白兵</span></div><div class="piece-disc black"><span class="glyph">♟</span><span class="name">黑兵</span></div><div class="piece-disc black"><span class="glyph">♟</span><span class="name">黑兵</span></div></div>
+</section>
+<section class="page practice-page">
+<h1>国际象棋课堂讲义 · 走法练习</h1>
+<ol class="practice"><li>写出 a1、h1、a8、h8 四格分别是什么颜色。</li><li>白马位于 b1，一步能走到哪些格子？请全部列出。</li><li>开局时白兵与黑兵分别站在哪些格子？各有多少枚？</li><li>白王位于 e1 且周围没有其他棋子时，一步能走到哪些格子？</li><li>e4 格子的四个斜线相邻格分别是什么？</li></ol>
+<p class="hint">完成后再翻到下一页核对答案。</p>
+</section>
+<section class="page answer-page">
+<h2>参考答案</h2>
+<ol class="answers"><li>a1 深色，h1 浅色，a8 浅色，h8 深色。</li><li>b1 的马一步可到 a3、c3、d2。</li><li>白兵在 a2–h2，共 8 枚；黑兵在 a7–h7，共 8 枚。</li><li>e1 的白王一步可到 d1、f1、d2、e2、f2。</li><li>e4 的斜线相邻格为 d3、f3、d5、f5。</li></ol>
+</section>
+</body>
+</html>
